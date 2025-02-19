@@ -2,59 +2,44 @@ syntax = "proto3";
 
 package rover;
 
-// The service definition for Rover communication with Ground Control
 service RoverService {
-    // Get a 2D map of the terrain
-    rpc GetMap(Empty) returns (MapResponse);
-
-    // Get a stream of commands for rover navigation
-    rpc GetCommands(Empty) returns (CommandsResponse);
-
-    // Get a serial number for a detected mine
-    rpc GetMineSerial(Empty) returns (MineSerialResponse);
-
-    // Report execution status of the commands
-    rpc ReportExecutionStatus(ExecutionStatusRequest) returns (ExecutionStatusResponse);
-
-    // Share a mine disarm PIN with the server
-    rpc ShareMinePIN(PINRequest) returns (PINResponse);
+    rpc GetMap (Empty) returns (MapResponse);
+    rpc GetCommands (CommandsRequest) returns (CommandsResponse);
+    rpc GetMineSerial (Empty) returns (MineSerialResponse);
+    rpc ReportExecutionStatus (ExecutionStatusRequest) returns (ExecutionStatusResponse);
+    rpc ShareMinePIN (PINRequest) returns (PINResponse);
 }
 
-// Message to handle empty request
 message Empty {}
 
-// Response containing the map data
 message MapResponse {
-    repeated string map = 1; // Each string could represent a row in the map
+    repeated string map = 1;
 }
 
-// Response containing the stream of commands
+message CommandsRequest {
+    int32 rover_id = 1;
+}
+
 message CommandsResponse {
-    repeated string commands = 1; // Stream of commands
+    repeated string commands = 1;
 }
 
-// Response with a mine serial number
 message MineSerialResponse {
     string serialNumber = 1;
 }
 
-// Request to report the execution status
 message ExecutionStatusRequest {
     bool success = 1;
-    string message = 2; // Optional message, e.g., "Exploded" or "All commands executed"
 }
 
-// Response after reporting the execution status
 message ExecutionStatusResponse {
-    bool acknowledged = 1; // Confirmation that the server received the status
+    bool acknowledged = 1;
 }
 
-// Request to share a mine PIN
 message PINRequest {
-    string pin = 1; // The disarm PIN
+    string pin = 1;
 }
 
-// Response after sharing a mine PIN
 message PINResponse {
-    bool accepted = 1; // Confirmation that the PIN was correct and accepted
+    bool accepted = 1;
 }
