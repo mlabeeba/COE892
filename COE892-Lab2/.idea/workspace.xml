@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a569e7d1-b1c3-42c8-a781-6ba9375da4fd" name="Changes" comment="" />
+    <list default="true" id="a569e7d1-b1c3-42c8-a781-6ba9375da4fd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/buffer.proto" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/buffer_pb2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/buffer_pb2_grpc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/client_DeMiner.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/client_Rovers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/map1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/mines.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../COE892-Lab3/server_GroundControl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../COE892-Lab3/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../COE892-Lab3/.idea/misc.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,21 +51,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.gRPC_client.executor": "Run",
-    "Python.gRPC_server.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/labeeba/Documents/GitHub/COE892/COE892-Lab2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.gRPC_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gRPC_server.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/labeeba/Documents/GitHub/COE892/COE892-Lab2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/files" />
@@ -138,6 +149,7 @@
       <workItem from="1739944062339" duration="861000" />
       <workItem from="1739944927053" duration="890000" />
       <workItem from="1740133230396" duration="6246000" />
+      <workItem from="1741468872488" duration="2867000" />
     </task>
     <servers />
   </component>
