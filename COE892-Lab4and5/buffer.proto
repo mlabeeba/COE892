@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package rover;
+
+//Ground Control service definition
+service GroundControl{
+  rpc getMap(mapRequest) returns (mapReply){}
+  rpc getCommands(commandRequest) returns (commandReply){}
+  rpc getMineSerialNumber(mineSerialNumberRequest) returns (mineSerialNumberReply){}
+  rpc getSuccess(successRequest) returns (successReply){}
+  rpc getMinePin(minePinRequest) returns (minePinReply){}
+}
+
+message mapRequest{
+  string request = 1;
+}
+
+message mapReply{
+  string map = 1;
+  string rows = 2;
+  string column = 3;
+}
+
+message commandRequest{
+  string roverNum = 1;
+}
+
+message commandReply{
+  string moves = 1;
+}
+
+message mineSerialNumberRequest{
+  string roverPos = 1;
+}
+
+message mineSerialNumberReply{
+  string serialNum = 1;
+}
+
+message successRequest{
+  string status = 1;
+}
+
+message successReply{
+  string response = 1;
+}
+
+message minePinRequest{
+  string mineNum = 1;
+}
+
+message minePinReply{
+  string pin = 1;
+}
