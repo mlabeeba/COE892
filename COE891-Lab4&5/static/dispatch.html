@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dispatching Rover</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white min-h-screen flex flex-col items-center justify-start py-10">
+<h1 id="dispatch-title" class="text-3xl font-bold text-gray-800 mb-6">
+    Dispatching Rover
+</h1>
+
+<div class="flex gap-4 mb-4">
+    <button id="playButton" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+        ▶️ Play
+    </button>
+    <button id="pauseButton" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded">
+        ⏸️ Pause
+    </button>
+</div>
+
+<div id="map" class="grid gap-1 border border-gray-300 rounded p-2"></div>
+
+<div id="roverStatus" class="mt-6 text-lg font-medium text-gray-700">
+    Status: <span id="statusText">Not Started</span>
+</div>
+<div id="roverCommand" class="text-md mt-2 text-gray-600">
+    Current Command: <span id="commandText">N/A</span>
+</div>
+
+<!-- Loading Spinner -->
+<div id="loadingSpinner" class="mt-2 hidden">
+    <svg class="animate-spin h-6 w-6 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+    </svg>
+</div>
+
+
+<!-- JavaScript Logic -->
+<script src="/static/rover-dispatch.js"></script>
+
+</body>
+</html>

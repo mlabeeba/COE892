@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Rover Map Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white-100 min-h-screen flex flex-col items-center justify-start p-8">
+
+    <!-- Title -->
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Rover Map Dashboard</h1>
+
+    <!-- Map & Controls -->
+    <div class="bg-white p-8 flex gap-10 w-full max-w-5xl items-start justify-center mb-10">
+        <!-- Map -->
+        <div class="flex flex-col">
+            <div id="map" class="grid gap-1"></div>
+        </div>
+
+        <!-- Map Settings -->
+        <div class="flex flex-col gap-4 w-48">
+            <form id="mapForm" class="space-y-4">
+                <div>
+                    <label for="height" class="block text-sm font-medium text-gray-600">Height</label>
+                    <input type="number" id="height" name="height" min="1"
+                           class="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                </div>
+                <div>
+                    <label for="width" class="block text-sm font-medium text-gray-600">Width</label>
+                    <input type="number" id="width" name="width" min="1"
+                           class="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"/>
+                </div>
+                <button type="submit"
+                        class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+                    Update Map
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Rover Info Table -->
+    <div class="w-full max-w-7xl bg-white p-6">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-semibold text-gray-800">Rover Info</h2>
+            <button onclick="openCreateModal()"
+                    class="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded text-sm">
+                Create Rover
+            </button>
+        </div>
+        <table class="w-full table-fixed border border-gray-300">
+            <thead>
+                <tr class="bg-gray-100">
+                    <th class="w-1/4 px-4 py-2 text-left text-sm font-medium text-gray-600 border-b border-r">Rover ID</th>
+                    <th class="w-2/8 px-4 py-2 text-left text-sm font-medium text-gray-600 border-b border-r">Commands</th>
+                    <th class="w-1/4 px-4 py-2 text-left text-sm font-medium text-gray-600 border-b border-l">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="roverTableBody"></tbody>
+        </table>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-md w-96">
+            <h3 class="text-lg font-bold mb-4">Edit Rover</h3>
+            <form id="editForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Rover ID</label>
+                    <input type="text" id="editRoverId" class="w-full px-3 py-2 border rounded-md"/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Commands</label>
+                    <input type="text" id="editRoverMoves" pattern="[RLMD]*"
+                           class="w-full px-3 py-2 border rounded-md"/>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <button type="button" onclick="closeModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Modal -->
+    <div id="createModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-6 rounded-md w-96">
+            <h3 class="text-lg font-bold mb-4">Create New Rover</h3>
+            <form id="createForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Rover ID</label>
+                    <input type="text" id="createRoverId" required class="w-full px-3 py-2 border rounded-md"/>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-600">Commands</label>
+                    <input type="text" id="createRoverMoves" required class="w-full px-3 py-2 border rounded-md"/>
+                </div>
+                <div class="flex justify-end gap-2">
+                    <button type="button" onclick="closeCreateModal()" class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
+                        Cancel
+                    </button>
+                    <button type="submit" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script src="/static/rover-dashboard.js"></script>
+
+</body>
+</html>
