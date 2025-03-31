@@ -1,17 +1,8 @@
-
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-import hashlib
-import random
-import string
-import os
-import json
-import requests
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
-
+import hashlib, random, string, os, json, requests
 
 from Utils.map_mine_utils import (
     map_data,
@@ -24,6 +15,7 @@ from Utils.map_mine_utils import (
     UpdateMine,
     read_map
 )
+
 from Utils.rover_utils import (
     NewRover,
     RoverUpdate,
